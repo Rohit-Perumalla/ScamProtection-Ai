@@ -1,0 +1,6 @@
+{
+  "name": "ScamProtAI – AI-Based Scam & Phishing Detection System",
+  "description": "AI-powered cybersecurity awareness prototype that analyzes suspicious messages and URLs using machine learning and NLP heuristics to classify risk levels and provide explainable safety insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
