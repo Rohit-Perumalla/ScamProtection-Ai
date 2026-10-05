@@ -70,8 +70,21 @@ export const AboutSection: React.FC = () => {
                 Supporting SDG 16 – Peace, Justice & Strong Institutions
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                By democratizing cybersecurity literacy and giving everyday citizens tools to verify deceptive digital communication, ScamProtAI contributes to target 16.4 and 16.10: combating cyber-enabled illicit financial flows, protecting vulnerable populations from predatory fraud, and ensuring public access to secure, transparent information in the digital sphere.
+                By democratizing cybersecurity literacy and giving everyday citizens tools to verify deceptive digital communication, ScamProtAI promotes key principles of peace, justice, and resilient digital institutions:
               </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+                {[
+                  'Digital safety',
+                  'Cybersecurity awareness',
+                  'Safer online communication',
+                  'Scam & phishing awareness'
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-1.5 text-xs text-cyan-300 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -445,8 +445,8 @@ export const AnalyzeSection: React.FC<AnalyzeSectionProps> = ({ onScanCompleted 
                           }`}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            <span className="text-sm font-bold text-slate-100 flex items-center gap-1.5">
-                              <span className={isHigh ? 'text-rose-400' : 'text-amber-400'}>•</span>
+                            <span className="text-sm font-bold text-slate-100 flex items-center gap-2">
+                              <span className={isHigh ? 'text-rose-400 font-bold' : 'text-amber-400 font-bold'}>✓</span>
                               {indicator.title}
                             </span>
                             <span

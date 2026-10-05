@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   KeyRound, Link2, DollarSign, Gift, Lock, UserCheck, 
-  CheckCircle2, XCircle, HelpCircle, Shield, AlertTriangle 
+  CheckCircle2, XCircle, HelpCircle, Shield, AlertTriangle, Globe
 } from 'lucide-react';
 
 export const SafetyTipsSection: React.FC = () => {
@@ -44,7 +44,7 @@ export const SafetyTipsSection: React.FC = () => {
       actionableRule: 'Rule: Real prizes never require you to pay money to receive winnings.'
     },
     {
-      title: 'Do not share passwords',
+      title: 'Never share passwords',
       subtitle: 'Use password managers and unique credentials',
       description: 'No legitimate customer support agent will ever ask for your plaintext password. Never enter your password on pages opened via unsolicited text or email links.',
       icon: Lock,
@@ -58,6 +58,14 @@ export const SafetyTipsSection: React.FC = () => {
       icon: UserCheck,
       color: 'border-purple-500/30 bg-purple-950/20 text-purple-400',
       actionableRule: 'Rule: Expand the full email address header to inspect the actual sending domain.'
+    },
+    {
+      title: 'Use official websites for verification',
+      subtitle: 'Bypass unverified inbound messages',
+      description: 'Whenever in doubt about an account alert, bill, or package notification, search for the official organization independently or use your bookmarked official portal.',
+      icon: Globe,
+      color: 'border-teal-500/30 bg-teal-950/20 text-teal-400',
+      actionableRule: 'Rule: Never trust the phone number or link inside a suspicious inbound message.'
     },
   ];
 

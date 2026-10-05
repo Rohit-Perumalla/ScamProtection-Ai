@@ -146,22 +146,45 @@ export const HowItWorksSection: React.FC = () => {
           })}
         </div>
 
-        {/* Architecture Flow Banner */}
+        {/* 8-Stage Architecture Flow Cards */}
         <div className="mt-14 rounded-2xl border border-slate-800 bg-slate-900/80 p-6 md:p-8">
-          <div className="text-center mb-6">
-            <span className="text-xs font-mono uppercase tracking-wider text-slate-400">System Architecture Flow</span>
-            <h3 className="text-xl font-bold text-white mt-1">End-to-End Threat Pipeline</h3>
+          <div className="text-center mb-8">
+            <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">Visual Processing Pipeline</span>
+            <h3 className="text-2xl font-bold text-white mt-1">End-to-End AI Detection Workflow</h3>
+            <p className="text-xs text-slate-400 mt-1 max-w-xl mx-auto">
+              From raw user input to explainable risk attribution and actionable safety advice.
+            </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-slate-300">
-            {['User', 'ScamProtAI Interface', 'Message / URL', 'Preprocessing', 'Feature Extraction', 'ML Model', 'Risk Classification', 'Explainable Result', 'Safety Recommendation'].map((stage, i, arr) => (
-              <React.Fragment key={stage}>
-                <span className="rounded-lg bg-slate-950 border border-slate-800 px-3 py-1.5 text-cyan-300">
-                  {stage}
-                </span>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 relative">
+            {[
+              { num: '01', title: 'USER', subtitle: 'Initiates check' },
+              { num: '02', title: 'MESSAGE / URL', subtitle: 'Raw payload' },
+              { num: '03', title: 'PREPROCESSING', subtitle: 'Sanitization & tokens' },
+              { num: '04', title: 'FEATURE EXTRACTION', subtitle: 'TF-IDF & heuristics' },
+              { num: '05', title: 'AI/ML ANALYSIS', subtitle: 'Classifier inference' },
+              { num: '06', title: 'RISK CLASSIFICATION', subtitle: '0–100% scoring' },
+              { num: '07', title: 'EXPLANATION', subtitle: 'Feature attribution' },
+              { num: '08', title: 'SAFETY RECOMMENDATION', subtitle: 'Protective action' },
+            ].map((stage, i, arr) => (
+              <div key={stage.title} className="relative flex flex-col items-center">
+                <div className="w-full h-full rounded-xl border border-slate-800 bg-slate-950/70 p-3 text-center flex flex-col items-center justify-between hover:border-cyan-500/40 transition-colors">
+                  <span className="font-mono text-[10px] text-cyan-400 font-bold mb-1">
+                    {stage.num}
+                  </span>
+                  <div className="font-bold text-xs text-white uppercase tracking-tight">
+                    {stage.title}
+                  </div>
+                  <div className="text-[10px] text-slate-400 mt-1">
+                    {stage.subtitle}
+                  </div>
+                </div>
                 {i < arr.length - 1 && (
-                  <ArrowRight className="h-3.5 w-3.5 text-slate-600 shrink-0" />
+                  <div className="hidden lg:flex absolute -right-2 top-1/2 -translate-y-1/2 z-10 text-slate-600">
+                    <ArrowRight className="h-3 w-3" />
+                  </div>
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </div>
@@ -183,6 +206,26 @@ export const HowItWorksSection: React.FC = () => {
               </p>
 
               <div className="space-y-3 pt-2">
+                <div className="rounded-xl border border-slate-800 bg-slate-900/90 p-4">
+                  <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">Core AI/ML Stack</span>
+                  <div className="grid grid-cols-2 gap-2 mt-2">
+                    {[
+                      'Artificial Intelligence',
+                      'Machine Learning',
+                      'Natural Language Processing',
+                      'TF-IDF Vectorization',
+                      'Text Classification',
+                      'Risk Scoring',
+                      'Explainable AI'
+                    ].map((tech) => (
+                      <div key={tech} className="flex items-center gap-1.5 text-xs text-slate-300 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800">
+                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                        <span>{tech}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 {pipelineStages.map((stage, i) => (
                   <div key={i} className="rounded-xl border border-slate-800/80 bg-slate-950/60 p-3">
                     <div className="text-xs font-bold text-cyan-300">{stage.name}</div>

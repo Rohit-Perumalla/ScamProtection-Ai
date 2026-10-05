@@ -14,21 +14,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const featureCards = [
     {
       title: 'AI Scam Detection',
-      description: 'Analyze suspicious messages using AI/ML to detect psychological manipulation, urgent threats, and fraud vectors.',
+      description: 'Analyze suspicious messages using AI/ML.',
       icon: Shield,
       emoji: '🛡️',
       color: 'border-cyan-500/30 hover:border-cyan-400/50 bg-cyan-950/20 text-cyan-400',
     },
     {
       title: 'URL Analysis',
-      description: 'Check suspicious links for potential phishing indicators, including raw IP hosting, brand typosquatting, and disposable TLDs.',
+      description: 'Check suspicious URLs for phishing indicators.',
       icon: Link2,
       emoji: '🔗',
       color: 'border-blue-500/30 hover:border-blue-400/50 bg-blue-950/20 text-blue-400',
     },
     {
       title: 'Explainable Results',
-      description: 'Understand why content was classified as suspicious through interpretable feature attribution, risk scoring, and safety steps.',
+      description: 'Understand why the content was classified as suspicious.',
       icon: Lightbulb,
       emoji: '💡',
       color: 'border-emerald-500/30 hover:border-emerald-400/50 bg-emerald-950/20 text-emerald-400',
@@ -58,7 +58,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              ScamProtAI analyzes suspicious messages and URLs and identifies potential scam and phishing threats.
+              ScamProtAI analyzes suspicious messages and URLs to identify potential scam and phishing threats.
             </p>
 
             {/* CTAs */}
