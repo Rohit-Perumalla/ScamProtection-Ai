@@ -1,9 +1,12 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
+import { GithubIcon } from './GithubIcon';
 
 interface FooterProps {
   onSelectTab: (tab: string) => void;
 }
+
+const GITHUB_REPO_URL = 'https://github.com/Rohit-Perumalla/ScamProtection-Ai';
 
 export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   const links = [
@@ -40,8 +43,8 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             </p>
           </div>
 
-          {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-6 text-xs font-medium">
+          {/* Navigation Links + View Source Code GitHub Link */}
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-xs font-medium">
             {links.map((link) => (
               <button
                 key={link.id}
@@ -51,6 +54,15 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                 {link.label}
               </button>
             ))}
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition-colors"
+            >
+              <GithubIcon className="h-3.5 w-3.5 text-white" />
+              <span>View Source Code</span>
+            </a>
           </nav>
         </div>
 
@@ -66,6 +78,16 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             </button>.
           </p>
           <div className="flex items-center gap-4">
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-slate-400 hover:text-cyan-300 transition-colors"
+            >
+              <GithubIcon className="h-3.5 w-3.5 text-slate-300" />
+              <span>GitHub</span>
+            </a>
+            <span aria-hidden="true">·</span>
             <span>Educational Cybersecurity Prototype</span>
             <span aria-hidden="true">·</span>
             <span>&copy; {new Date().getFullYear()} ScamProtAI</span>

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Shield, Menu, X, ArrowRight } from 'lucide-react';
+import { GithubIcon } from './GithubIcon';
 
 interface NavbarProps {
   activeTab: string;
   onSelectTab: (tab: string) => void;
 }
+
+const GITHUB_REPO_URL = 'https://github.com/Rohit-Perumalla/ScamProtection-Ai';
 
 export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab }) => {
           })}
         </nav>
 
-        {/* Zone 3: Primary action button */}
+        {/* Zone 3: Primary action button + GitHub repo link */}
         <div className="hidden sm:flex items-center gap-3">
           <button
             onClick={() => handleNavClick('analyze')}
@@ -69,10 +72,40 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab }) => {
             <span>Analyze Now</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </button>
+
+          {/* GitHub Icon Link with Hover Tooltip */}
+          <div className="relative group flex items-center">
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Source Code on GitHub"
+              aria-label="View Source Code on GitHub"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/80 text-slate-100 transition-all duration-200 hover:border-cyan-500/60 hover:bg-slate-800 hover:text-white hover:shadow-sm hover:shadow-cyan-500/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            >
+              <GithubIcon className="h-4.5 w-4.5 text-white transition-transform duration-200 group-hover:scale-110" />
+            </a>
+
+            {/* Tooltip */}
+            <div className="pointer-events-none absolute -bottom-9 right-0 z-50 hidden md:group-hover:flex items-center justify-center whitespace-nowrap rounded-md border border-slate-800 bg-slate-900/95 px-2.5 py-1 text-[11px] font-medium text-slate-200 shadow-xl backdrop-blur-sm">
+              View Source Code on GitHub
+            </div>
+          </div>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="flex md:hidden">
+        {/* Mobile controls: GitHub link + Menu Toggle */}
+        <div className="flex sm:hidden items-center gap-2">
+          <a
+            href={GITHUB_REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View Source Code on GitHub"
+            aria-label="View Source Code on GitHub"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/80 text-white transition-colors hover:border-cyan-500/60 hover:bg-slate-800 focus:outline-none"
+          >
+            <GithubIcon className="h-4.5 w-4.5 text-white" />
+          </a>
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-900 hover:text-white focus:outline-none"
@@ -102,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab }) => {
               </button>
             );
           })}
-          <div className="pt-2">
+          <div className="pt-2 space-y-2">
             <button
               onClick={() => handleNavClick('analyze')}
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2.5 text-sm font-semibold text-slate-950 shadow-md transition-all cursor-pointer"
@@ -110,6 +143,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab }) => {
               <span>Analyze Suspicious Message</span>
               <ArrowRight className="h-4 w-4" />
             </button>
+
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-slate-800 bg-slate-900/90 px-4 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-500/50 hover:bg-slate-800 hover:text-white"
+            >
+              <GithubIcon className="h-4.5 w-4.5 text-white" />
+              <span>View Source Code on GitHub</span>
+            </a>
           </div>
         </div>
       )}
